@@ -53,6 +53,8 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    display: flex;
+    justify-content: center;
     text-align: center;
     background: var(--gold);
     color: var(--black);

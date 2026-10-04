@@ -56,6 +56,9 @@
 
 /* Botón CTA en nav: contorno dorado, se rellena al pasar el ratón */
 .nav-links a.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   border: 1px solid var(--gold);
   color: var(--gold);
   padding: 0.55rem 1.2rem;
@@ -861,6 +864,23 @@
 
 
 .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 2rem;
+}
+
+.cta-meta {
+  margin-top: 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(26,10,4,0.78);
+}
+
+.cta-meta a { color: inherit; }
 
 .cta-title {
   font-family: var(--font-heading);

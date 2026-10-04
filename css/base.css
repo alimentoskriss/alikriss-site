@@ -204,6 +204,21 @@ section[id] { scroll-margin-top: 5rem; }
   background: #2E1608;
 }
 
+/* Acción secundaria sobre fondo dorado (sección contacto) */
+.btn-link-dark {
+  background: none;
+  color: var(--black);
+  padding: 1rem 0.2rem;
+  border-radius: 0;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(26,10,4,0.4);
+  text-underline-offset: 0.4em;
+  text-decoration-thickness: 1px;
+}
+
+.btn-link-dark:hover { text-decoration-color: var(--black); }
+
 /* ── Animaciones de scroll ──────────────────────────────────────────────────── */
 /* Respeta prefers-reduced-motion */
 @media (prefers-reduced-motion: no-preference) {
