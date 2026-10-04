@@ -1,140 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ============================================================================
   SITEMAP.XML — Alikriss / Alimentos Kriss VII, C.A.
-  Sitio: https://www.alimentoskriss.com
-  Generado: 2026-05-23
+  Dominio canónico: https://alimentoskriss.com (sin www)
 
-  CÓMO MANTENER ESTE ARCHIVO
-  ─────────────────────────────────────────────────────────────────────────────
-  • Cada vez que publiques una página nueva, agrega una entrada <url>.
-  • Actualiza <lastmod> cuando el contenido cambie (formato YYYY-MM-DD).
-  • <changefreq>: con qué frecuencia Google debe revisitar la página.
-      always | hourly | daily | weekly | monthly | yearly | never
-  • <priority>: importancia relativa (0.0–1.0). La home siempre es 1.0.
-  • Después de cualquier cambio, notifica a Google:
-      https://search.google.com/search-console
-      → Sitemaps → Enviar sitemap
-
-  PARA AGREGAR UN NUEVO PRODUCTO
-  ─────────────────────────────────────────────────────────────────────────────
-  Copia el bloque de ejemplo al final de este archivo y rellena:
-    <loc>         https://www.alimentoskriss.com/productos/SLUG.html
-    <lastmod>     fecha de publicación
-    <changefreq>  monthly
-    <priority>    0.9
-  ============================================================================
+  CÓMO MANTENERLO
+  • Solo URLs reales que devuelvan 200. No incluir anclas (#seccion):
+    Google las trata como la misma página.
+  • Al publicar una página nueva (p. ej. /productos/SLUG.html), añadir un
+    bloque <url> con su <loc>, <lastmod> e imágenes.
+  • Actualizar <lastmod> (AAAA-MM-DD) cuando cambie el contenido y reenviar
+    el sitemap en Google Search Console → Sitemaps.
 -->
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
->
-
-  <!-- ========================================================================
-       HOME — Página principal / landing del producto estrella
-       Prioridad máxima. Revisar cada vez que se actualice el hero o el CTA.
-  ======================================================================== -->
-  <url>
-    <loc>https://www.alimentoskriss.com/</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-
-    <!-- Imagen principal del producto (ayuda al Image Search de Google) -->
-    <image:image>
-      <image:loc>https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-frente.webp</image:loc>
-      <image:title>Macarrones con Sabor a Queso Alikriss 200g – Frente del empaque</image:title>
-      <image:caption>Empaque frente de los Macarrones con Sabor a Queso Alikriss, pasta de sémola de trigo durum con queso cheddar, 200g, hecha en Venezuela.</image:caption>
-    </image:image>
-
-    <!-- Imagen reverso con información nutricional -->
-    <image:image>
-      <image:loc>https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-reverso.webp</image:loc>
-      <image:title>Macarrones con Sabor a Queso Alikriss – Información nutricional y preparación</image:title>
-      <image:caption>Reverso del empaque Alikriss con tabla nutricional y pasos de preparación.</image:caption>
-    </image:image>
-
-    <!-- Logo de marca -->
-    <image:image>
-      <image:loc>https://www.alimentoskriss.com/assets/img/logo-alikriss.png</image:loc>
-      <image:title>Logo Alikriss – Alimentos Kriss</image:title>
-    </image:image>
-  </url>
-
-  <!-- ========================================================================
-       PRODUCTO: Macarrones con Sabor a Queso
-       Slug: macarrones-queso
-       Datos: data/products.json → id "macarrones-queso"
-       Actualizar <lastmod> si cambias: imágenes, descripción, nutrición o precio.
-  ======================================================================== -->
-  <url>
-    <loc>https://www.alimentoskriss.com/productos/macarrones-queso.html</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-
-    <image:image>
-      <image:loc>https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-frente.webp</image:loc>
-      <image:title>Macarrones con Sabor a Queso Alikriss 200g</image:title>
-      <image:caption>Pasta de sémola de trigo durum con sabor a queso cheddar. Lista en minutos. Hecha en Venezuela.</image:caption>
-    </image:image>
-
-    <image:image>
-      <image:loc>https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-reverso.webp</image:loc>
-      <image:title>Información nutricional – Macarrones Alikriss 200g</image:title>
-      <image:caption>Tabla nutricional y modo de preparación de los Macarrones con Sabor a Queso Alikriss.</image:caption>
-    </image:image>
-  </url>
-
-  <!-- ========================================================================
-       ANCLAS INTERNAS — Secciones de la home indexables como destino directo
-       Útil para aparecer en búsquedas de fragmento (Google rich snippets).
-       changefreq y priority bajos porque son secciones, no páginas completas.
-  ======================================================================== -->
-
-  <!-- Sección Nosotros / La experiencia -->
-  <url>
-    <loc>https://www.alimentoskriss.com/#nosotros</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Sección Preparación -->
-  <url>
-    <loc>https://www.alimentoskriss.com/#preparacion</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <!-- Sección Contacto -->
-  <url>
-    <loc>https://www.alimentoskriss.com/#contacto</loc>
-    <lastmod>2026-05-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-
-  <!-- ========================================================================
-       PLANTILLA PARA NUEVOS PRODUCTOS
-       ─────────────────────────────────────────────────────────────────────────
-       Cuando agregues un producto nuevo, copia este bloque, descoméntalo
-       y rellena los campos marcados con ← .
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://www.alimentoskriss.com/productos/SLUG-DEL-PRODUCTO.html</loc>   ← slug del JSON
-    <lastmod>YYYY-MM-DD</lastmod>                                                 ← fecha de lanzamiento
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-
+    <loc>https://alimentoskriss.com/</loc>
+    <lastmod>2026-10-04</lastmod>
     <image:image>
-      <image:loc>https://www.alimentoskriss.com/assets/img/productos/SLUG-frente.webp</image:loc>  ← ruta de imagen
-      <image:title>NOMBRE DEL PRODUCTO – Alikriss</image:title>                                   ← nombre completo
-      <image:caption>Descripción breve del producto para Google Images.</image:caption>            ← descripción
+      <image:loc>https://alimentoskriss.com/assets/img/productos/macarrones-queso-frente.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://alimentoskriss.com/assets/img/productos/macarrones-queso-reverso.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg</image:loc>
     </image:image>
   </url>
-  ======================================================================== -->
 
 </urlset>

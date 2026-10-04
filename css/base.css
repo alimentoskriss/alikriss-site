@@ -46,11 +46,53 @@ img {
 
 .skip-link:focus { left: 1rem; }
 
+/* ── Texto solo para lectores de pantalla ───────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Foco visible (navegación con teclado) ─────────────────────────────────
+   Solo aparece con teclado (:focus-visible), no al hacer clic con ratón. */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Sobre fondos claros el dorado no contrasta: usar el tono oscuro */
+.section:not(.about) :focus-visible,
+.cta-section :focus-visible {
+  outline-color: var(--black);
+}
+
 /* ── Tipografía base ────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
   font-weight: 700;
+  text-wrap: balance;
+}
+
+/* Secciones con ancla: que el nav fijo no tape el título */
+section[id] { scroll-margin-top: 5rem; }
+
+/* ── Íconos SVG (sprite en index.html) ─────────────────────────────────────── */
+.icon {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -0.125em;
 }
 
 /* ── Layouts de sección compartidos ────────────────────────────────────────── */
@@ -67,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: var(--gold-text);
   margin-bottom: 0.7rem;
 }
 
@@ -81,8 +123,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title em {
-  font-style: normal;
-  color: var(--gold-dark);
+  font-style: italic;
+  color: var(--gold-text-lg);
 }
 
 .section-lead {
@@ -97,26 +139,46 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-btn);
   font-family: var(--font-body);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1rem;
+  letter-spacing: 0.01em;
   text-decoration: none;
   cursor: pointer;
   border: none;
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
+.btn .icon { font-size: 1.15em; transition: transform var(--transition-base); }
+.btn:hover .icon { transform: translateX(3px); }
+
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+  background: var(--gold);
   color: var(--black);
-  padding: 0.85rem 2rem;
-  box-shadow: var(--shadow-gold);
+  padding: 0.9rem 1.8rem;
 }
 
 .btn-gold:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-gold-lg);
+  background: var(--gold-light);
+}
+
+/* Acción secundaria: enlace subrayado (sobre fondo oscuro) */
+.btn-link {
+  background: none;
+  color: rgba(255,255,255,0.85);
+  padding: 0.9rem 0.2rem;
+  border-radius: 0;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.35);
+  text-underline-offset: 0.4em;
+  text-decoration-thickness: 1px;
+}
+
+.btn-link:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
 }
 
 .btn-outline {
@@ -134,14 +196,12 @@ h1, h2, h3, h4, h5, h6 {
 .btn-dark {
   background: var(--black);
   color: var(--gold);
-  padding: 1rem 2.8rem;
+  padding: 1rem 2.4rem;
   font-size: 1.05rem;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
 }
 
 .btn-dark:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.35);
+  background: #2E1608;
 }
 
 /* ── Animaciones de scroll ──────────────────────────────────────────────────── */
@@ -172,11 +232,7 @@ h1, h2, h3, h4, h5, h6 {
     50%       { opacity: 1;   transform: scale(1.1); }
   }
 
-  @keyframes bob {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50%       { transform: translateY(-10px) rotate(4deg); }
   }
-}
 
 /* Sin animaciones si el usuario lo prefiere */
 @media (prefers-reduced-motion: reduce) {

@@ -1,6 +1,7 @@
 /* =============================================================================
    MAIN.JS — Comportamientos globales del sitio Alikriss
    - Nav: clase .nav--scrolled al hacer scroll (CSS controla el estilo)
+   - Menú móvil: abre/cierra la hoja de navegación (.nav--open)
    - Reveal: animación de entrada al hacer scroll para .reveal
    - Smooth scroll: para todos los <a href="#...">
    Nota: respeta prefers-reduced-motion (las animaciones .reveal están
@@ -22,6 +23,43 @@
 
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav(); /* estado inicial */
+  }
+
+
+  /* ── 1b. Menú móvil (botón .nav-toggle, solo visible ≤ 768px) ─────────── */
+  const toggle = document.querySelector('.nav-toggle');
+  const menu   = document.getElementById('nav-links');
+
+  if (nav && toggle && menu) {
+    const setOpen = (open) => {
+      nav.classList.toggle('nav--open', open);
+      document.body.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      /* Altura real del nav para colocar la hoja justo debajo */
+      nav.style.setProperty('--nav-h', nav.offsetHeight + 'px');
+      if (open) menu.querySelector('a')?.focus();
+    };
+
+    toggle.addEventListener('click', () => setOpen(!nav.classList.contains('nav--open')));
+
+    /* Cerrar al elegir una sección */
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setOpen(false));
+    });
+
+    /* Cerrar con Escape y devolver el foco al botón */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    /* Si se agranda la ventana a escritorio, cerrar el menú */
+    window.matchMedia('(min-width: 769px)').addEventListener('change', (mq) => {
+      if (mq.matches) setOpen(false);
+    });
   }
 
 

@@ -11,23 +11,26 @@
   ======================================================================== -->
   <title>Alikriss | Macarrones con Sabor a Queso – Pasta venezolana irresistible</title>
   <meta name="description"    content="Alikriss trae a tu mesa los Macarrones con Sabor a Queso más deliciosos de Venezuela. Pasta de sémola de trigo durum, lista en minutos, con queso cheddar irresistible.">
-  <meta name="keywords"       content="macarrones con queso Venezuela, pasta venezolana, Alikriss, Alimentos Kriss, macarrones queso cheddar, pasta rápida Venezuela">
-  <meta name="robots"         content="index, follow">
+  <meta name="robots"         content="index, follow, max-image-preview:large">
   <meta name="author"         content="Alimentos Kriss VII, C.A.">
   <meta name="theme-color"    content="#1A0A04">
-  <link rel="canonical"       href="https://www.alimentoskriss.com/">
+  <!-- Dominio canónico: SIN www (GitHub Pages redirige www → alimentoskriss.com) -->
+  <link rel="canonical"       href="https://alimentoskriss.com/">
+  <link rel="alternate" hreflang="es-VE" href="https://alimentoskriss.com/">
 
   <!-- =======================================================================
        OPEN GRAPH — Redes sociales (Facebook, WhatsApp, LinkedIn)
        Editar imagen: assets/img/productos/macarrones-queso-og.jpg (1200×630)
   ======================================================================== -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://www.alimentoskriss.com/">
+  <meta property="og:url"         content="https://alimentoskriss.com/">
   <meta property="og:title"       content="Alikriss | Macarrones con Sabor a Queso – Venezuela">
   <meta property="og:description" content="Pasta de sémola de trigo durum con queso cheddar irresistible. Lista en minutos. Hecha con amor en Venezuela.">
-  <meta property="og:image"       content="https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg">
+  <meta property="og:image"       content="https://alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg">
+  <meta property="og:image:type"  content="image/jpeg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height"content="630">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"   content="Empaque de Macarrones con Sabor a Queso Alikriss 200 g">
   <meta property="og:locale"      content="es_VE">
   <meta property="og:site_name"   content="Alikriss – Alimentos Kriss">
 
@@ -35,7 +38,8 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Alikriss | Macarrones con Sabor a Queso">
   <meta name="twitter:description" content="Pasta irresistible hecha en Venezuela. Lista en minutos, llena de sabor.">
-  <meta name="twitter:image"       content="https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg">
+  <meta name="twitter:image"       content="https://alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg">
+  <meta name="twitter:image:alt"   content="Empaque de Macarrones con Sabor a Queso Alikriss 200 g">
 
   <!-- =======================================================================
        STRUCTURED DATA — Schema.org
@@ -48,13 +52,21 @@
     "@graph": [
       {
         "@type": "Organization",
+        "@id": "https://alimentoskriss.com/#organization",
         "name": "Alimentos Kriss VII, C.A.",
-        "url": "https://www.alimentoskriss.com",
-        "logo": "https://www.alimentoskriss.com/assets/img/logo-alikriss.png",
+        "alternateName": "Alikriss",
+        "url": "https://alimentoskriss.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://alimentoskriss.com/assets/img/logo-alikriss.png",
+          "width": 591,
+          "height": 591
+        },
         "taxID": "J-50038998-1",
+        "email": "info@alimentoskriss.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Av. Agustín Codazzi, Calle La Palmita",
+          "streetAddress": "Av. Agustín Codazzi, Calle La Palmita, Qta. 29 Anexo A",
           "addressLocality": "Caracas",
           "addressRegion": "Distrito Capital",
           "addressCountry": "VE"
@@ -62,37 +74,42 @@
         "contactPoint": {
           "@type": "ContactPoint",
           "email": "info@alimentoskriss.com",
-          "contactType": "customer service"
+          "contactType": "customer service",
+          "areaServed": "VE",
+          "availableLanguage": "es"
         }
       },
       {
         "@type": "Product",
-        "@id": "https://www.alimentoskriss.com/#macarrones-queso",
+        "@id": "https://alimentoskriss.com/#macarrones-queso",
         "name": "Macarrones con Sabor a Queso Alikriss",
-        "description": "Pasta de sémola de trigo durum con sabor a queso cheddar. Contenido neto 200g. Registrado SACS A-174.589.",
+        "description": "Pasta de sémola de trigo durum con sabor a queso cheddar. Contenido neto 200 g. Registrado SACS A-174.589.",
         "brand": { "@type": "Brand", "name": "Alikriss" },
-        "image": "https://www.alimentoskriss.com/assets/img/productos/macarrones-queso-frente.webp",
-        "weight": { "@type": "QuantitativeValue", "value": "200", "unitCode": "GRM" },
+        "manufacturer": { "@id": "https://alimentoskriss.com/#organization" },
+        "countryOfOrigin": { "@type": "Country", "name": "Venezuela" },
+        "category": "Pasta",
+        "image": [
+          "https://alimentoskriss.com/assets/img/productos/macarrones-queso-frente.webp",
+          "https://alimentoskriss.com/assets/img/productos/macarrones-queso-reverso.webp",
+          "https://alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg"
+        ],
+        "weight": { "@type": "QuantitativeValue", "value": 200, "unitCode": "GRM" },
         "nutrition": {
           "@type": "NutritionInformation",
-          "servingSize": "100g",
-          "calories": "350 cal",
-          "proteinContent": "15g",
-          "fatContent": "0g",
-          "carbohydrateContent": "71g"
-        },
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "VES",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@type": "Organization", "name": "Alimentos Kriss VII, C.A." }
+          "servingSize": "100 g",
+          "calories": "350 calories",
+          "proteinContent": "15 g",
+          "fatContent": "0 g",
+          "carbohydrateContent": "71 g"
         }
       },
       {
         "@type": "WebSite",
-        "url": "https://www.alimentoskriss.com",
+        "@id": "https://alimentoskriss.com/#website",
+        "url": "https://alimentoskriss.com/",
         "name": "Alikriss – Alimentos Kriss",
-        "inLanguage": "es-VE"
+        "inLanguage": "es-VE",
+        "publisher": { "@id": "https://alimentoskriss.com/#organization" }
       }
     ]
   }
@@ -100,13 +117,13 @@
 
   <!-- =======================================================================
        FUENTES — Google Fonts
-       Fuente de cuerpo: Nunito (amigable, legible, moderna)
-       Fuente de títulos: Playfair Display (elegante, editorial)
+       Fuente de cuerpo: Karla (sobria, muy legible)
+       Fuente de títulos: Playfair Display (elegante, editorial; cursiva para acentos)
        Datos: data/site.json → "fonts"
   ======================================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- =======================================================================
        HOJAS DE ESTILO — orden importa
@@ -114,32 +131,62 @@
        2. base.css     → reset, body, clases globales, animaciones
        3. components.css → nav, hero, flip, cards, footer…
        4. responsive.css → breakpoints (tablet, móvil, pequeño)
+       ?v=AAAA-MM → cambiarlo al editar CSS/JS para que los visitantes no vean
+                    la versión vieja guardada en caché
   ======================================================================== -->
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/tokens.css?v=2026-10">
+  <link rel="stylesheet" href="css/base.css?v=2026-10">
+  <link rel="stylesheet" href="css/components.css?v=2026-10">
+  <link rel="stylesheet" href="css/responsive.css?v=2026-10">
 
-  <!-- Favicon (reemplazar con favicon.ico real) -->
-  <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="assets/img/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+  <!-- =======================================================================
+       FAVICONS — /favicon.ico en la raíz (lo piden los navegadores por defecto)
+  ======================================================================== -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+
+  <!-- LCP: precargar la imagen del hero (responsive) -->
+  <link rel="preload" as="image" type="image/webp"
+        href="assets/img/productos/macarrones-queso-frente.webp"
+        imagesrcset="assets/img/productos/macarrones-queso-frente-440.webp 440w, assets/img/productos/macarrones-queso-frente.webp 701w"
+        imagesizes="(max-width: 480px) 90vw, 440px"
+        fetchpriority="high">
 </head>
 <body>
+
+<!-- =========================================================================
+     ÍCONOS SVG (sprite) — trazo de línea, heredan el color con currentColor
+     Uso: <svg class="icon" aria-hidden="true"><use href="#i-NOMBRE"/></svg>
+======================================================================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+  <symbol id="i-wheat" viewBox="0 0 24 24"><path d="M12 22V8"/><path d="M12 8c0-2.6 1.8-4.6 4.2-5 0 2.6-1.8 4.6-4.2 5zM12 8c0-2.6-1.8-4.6-4.2-5 0 2.6 1.8 4.6 4.2 5zM12 13c0-2.6 1.8-4.6 4.2-5 0 2.6-1.8 4.6-4.2 5zM12 13c0-2.6-1.8-4.6-4.2-5 0 2.6 1.8 4.6 4.2 5zM12 18c0-2.6 1.8-4.6 4.2-5 0 2.6-1.8 4.6-4.2 5zM12 18c0-2.6-1.8-4.6-4.2-5 0 2.6 1.8 4.6 4.2 5z"/></symbol>
+  <symbol id="i-cheese" viewBox="0 0 24 24"><path d="M3 19v-6l10-7 8 5v8z"/><path d="M3 13l18-2"/><circle cx="8" cy="16" r="1.2"/><circle cx="14" cy="15" r="1"/><circle cx="17.5" cy="17" r=".7"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13.5" r="8"/><path d="M12 9.5v4l2.5 2M9.5 2.5h5"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-pot" viewBox="0 0 24 24"><path d="M4 10h16v6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M2 10h20M9 3.5v3M12 2.5v4M15 3.5v3"/></symbol>
+  <symbol id="i-colander" viewBox="0 0 24 24"><path d="M2.5 9.5h19l-1.8 7.2A3 3 0 0 1 16.8 19H7.2a3 3 0 0 1-2.9-2.3z"/><path d="M9 13v.01M12 14v.01M15 13v.01M10.5 16v.01M13.5 16v.01"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M11 3.5l1.8 5.2 5.2 1.8-5.2 1.8L11 17.5l-1.8-5.2L4 10.5l5.2-1.8z"/><path d="M19 3v4M17 5h4M18 16v4M16 18h4"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21.5h4"/><path d="M12 2.5a6.5 6.5 0 0 0-3.8 11.8c.5.4.8 1 .8 1.6V16h6v-.1c0-.6.3-1.2.8-1.6A6.5 6.5 0 0 0 12 2.5z"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="7.5" r="3.5"/><path d="M2.5 20.5v-1.5A4.5 4.5 0 0 1 7 14.5h4a4.5 4.5 0 0 1 4.5 4.5v1.5"/><path d="M16 3.6a3.5 3.5 0 0 1 0 7.8M21.5 20.5v-1.5a4.5 4.5 0 0 0-3-4.2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M19.5 10c0 5.5-7.5 11.5-7.5 11.5S4.5 15.5 4.5 10a7.5 7.5 0 0 1 15 0z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 21.5h18M5.5 18v-7.5M9.8 18v-7.5M14.2 18v-7.5M18.5 18v-7.5M12 2.5 20.5 8h-17z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21.5s7.5-3.6 7.5-9.5V5.5L12 2.5l-7.5 3V12c0 5.9 7.5 9.5 7.5 9.5z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.5 2.6 3.8 6 3.8 9.5s-1.3 6.9-3.8 9.5c-2.5-2.6-3.8-6-3.8-9.5S9.5 5.1 12 2.5z"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5.5"/><circle cx="12" cy="12" r="1.5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
 
 <!-- =========================================================================
      ACCESIBILIDAD: Saltar al contenido
@@ -156,13 +203,18 @@
     <a href="/" aria-label="Alikriss – Inicio">
       <img
         class="nav-logo"
-        src="assets/img/logo-alikriss.png"
-        alt="Logo Alikriss"
-        width="120"
+        src="assets/img/logo-alikriss.webp"
+        alt="Alikriss"
+        width="52"
         height="52"
       >
     </a>
-    <ul class="nav-links" role="list">
+    <!-- Botón de menú (solo visible en móvil) — js/main.js -->
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+      <svg class="icon icon-open" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg>
+      <svg class="icon icon-close" aria-hidden="true" focusable="false"><use href="#i-close"/></svg>
+    </button>
+    <ul class="nav-links" id="nav-links" role="list">
       <li><a href="#producto">Producto</a></li>
       <li><a href="#preparacion">Preparación</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
@@ -188,9 +240,7 @@
 
       <!-- Texto del hero -->
       <div class="hero-text">
-        <div class="hero-pill" role="text">
-          <span>✦</span> Hecho con amor en Venezuela
-        </div>
+        <p class="hero-pill">Hecho con amor en Venezuela</p>
         <h1 class="hero-heading">
           Más que pasta,<br>
           una experiencia<br>
@@ -201,33 +251,32 @@
           Nuestros Macarrones con Sabor a Queso traen la calidez del hogar en cada bocado. Pasta de sémola de trigo durum, lista en minutos, con el queso cheddar que toda la familia ama.
         </p>
         <div class="hero-actions">
-          <a href="#producto" class="btn btn-gold">🧀 Ver el producto</a>
-          <a href="#nosotros" class="btn btn-outline">Conoce Alikriss</a>
+          <a href="#producto" class="btn btn-gold">Descubrir el producto <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+          <a href="#nosotros" class="btn btn-link">Nuestra historia</a>
         </div>
+        <!-- Datos del empaque (reemplazan a las insignias flotantes) -->
+        <dl class="hero-facts">
+          <div><dt>Sémola de trigo</dt><dd>Durum</dd></div>
+          <div><dt>Preparación</dt><dd>4 pasos</dd></div>
+          <div><dt>Registro SACS</dt><dd>A-174.589</dd></div>
+        </dl>
       </div>
 
       <!-- Imagen del producto en hero -->
       <!-- CAMBIAR IMAGEN: reemplazar src con la ruta del nuevo producto -->
-      <div class="hero-visual" aria-label="Empaque Macarrones Alikriss">
+      <div class="hero-visual">
         <div class="product-display">
           <img
             class="product-hero-img"
             src="assets/img/productos/macarrones-queso-frente.webp"
+            srcset="assets/img/productos/macarrones-queso-frente-440.webp 440w, assets/img/productos/macarrones-queso-frente.webp 701w"
+            sizes="(max-width: 480px) 90vw, 440px"
             alt="Empaque Macarrones con Sabor a Queso Alikriss 200g"
-            width="440"
-            height="710"
+            width="701"
+            height="1024"
             loading="eager"
             fetchpriority="high"
           >
-          <!-- Badges flotantes: data/products.json → "badges" -->
-          <div class="float-badge float-badge--red" aria-hidden="true">
-            <span style="font-size:1rem">⏱</span>
-            Listo en<br><strong>minutos</strong>
-          </div>
-          <div class="float-badge float-badge--gold" aria-hidden="true">
-            <span style="font-size:0.9rem">🏆</span>
-            Sabor<br><strong>original</strong>
-          </div>
         </div>
       </div>
 
@@ -248,11 +297,11 @@
       </div>
       <div class="stat">
         <div class="stat-num">350</div>
-        <div class="stat-label">Cal. por 100g</div>
+        <div class="stat-label">Calorías por 100g</div>
       </div>
       <div class="stat">
         <div class="stat-num">15g</div>
-        <div class="stat-label">Proteína / ración</div>
+        <div class="stat-label">Proteína por 100g</div>
       </div>
       <div class="stat">
         <div class="stat-num">0g</div>
@@ -279,17 +328,17 @@
       <!-- Editar tarjetas: data/site.json → "experienceCards" -->
       <div class="exp-grid">
         <article class="exp-card reveal">
-          <div class="exp-icon" aria-hidden="true">🌾</div>
+          <div class="exp-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-wheat"/></svg></div>
           <h3>Ingredientes premium</h3>
           <p>Pasta elaborada con sémola de trigo durum de alta calidad, seleccionada para ofrecer la mejor textura al dente y un sabor auténtico en cada bocado.</p>
         </article>
         <article class="exp-card reveal reveal-delay-1">
-          <div class="exp-icon" aria-hidden="true">🧀</div>
+          <div class="exp-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-cheese"/></svg></div>
           <h3>Sabor que conquista</h3>
           <p>Nuestra mezcla exclusiva de queso cheddar en polvo fue desarrollada para crear ese sabor irresistible que tus hijos van a pedir una y otra vez.</p>
         </article>
         <article class="exp-card reveal reveal-delay-2">
-          <div class="exp-icon" aria-hidden="true">⚡</div>
+          <div class="exp-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-timer"/></svg></div>
           <h3>Lista en minutos</h3>
           <p>La vida es rápida pero la familia no puede esperar. En pocos pasos tendrás un plato caliente, delicioso y lleno de amor sobre la mesa.</p>
         </article>
@@ -314,7 +363,7 @@
         <!-- Columna de texto -->
         <div>
           <!-- Editar: data/products.json → "name" -->
-          <span class="product-label">✦ Producto estrella</span>
+          <span class="product-label">Producto estrella</span>
           <h2 class="product-heading" id="prod-title">
             Macarrones con<br><em>Sabor a Queso</em>
           </h2>
@@ -324,12 +373,12 @@
           </p>
           <!-- Editar: data/products.json → "features" -->
           <div class="features">
-            <div class="feature"><span class="feature-check">✓</span>Sémola de trigo durum de primera calidad</div>
-            <div class="feature"><span class="feature-check">✓</span>Mezcla exclusiva con sabor a queso cheddar en polvo</div>
-            <div class="feature"><span class="feature-check">✓</span>Sin grasa añadida (0g por 100g)</div>
-            <div class="feature"><span class="feature-check">✓</span>Producido en Venezuela 🇻🇪</div>
+            <div class="feature"><span class="feature-check"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>Sémola de trigo durum de primera calidad</div>
+            <div class="feature"><span class="feature-check"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>Mezcla exclusiva con sabor a queso cheddar en polvo</div>
+            <div class="feature"><span class="feature-check"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>Sin grasa añadida (0g por 100g)</div>
+            <div class="feature"><span class="feature-check"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>Producido en Venezuela</div>
           </div>
-          <a href="#contacto" class="btn btn-gold">🛒 Quiero pedirlos ahora</a>
+          <a href="#contacto" class="btn btn-gold">Quiero pedirlos <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
 
           <!-- Editar: data/products.json → "nutritionChips" -->
           <div class="nutrition-chips">
@@ -355,33 +404,35 @@
         ================================================================= -->
         <div class="product-showcase reveal" data-flip-container>
           <div class="product-3d-wrap">
-            <div
-              class="flip-container"
-              role="button"
-              aria-label="Girar empaque para ver el reverso"
-              tabindex="0"
-            >
+            <!-- Clic en la imagen = atajo para ratón; el control accesible es el <button> -->
+            <div class="flip-container" id="flip-macarrones">
               <div class="flip-card" data-flip-card>
 
-                <!-- CAMBIAR IMAGEN FRENTE: solo cambiar src y alt -->
+                <!-- CAMBIAR IMAGEN FRENTE: solo cambiar src, srcset y alt -->
                 <div class="flip-face" data-flip-front>
                   <img
                     src="assets/img/productos/macarrones-queso-frente.webp"
+                    srcset="assets/img/productos/macarrones-queso-frente-440.webp 440w, assets/img/productos/macarrones-queso-frente.webp 701w"
+                    sizes="(max-width: 480px) 90vw, 440px"
                     alt="Frente del empaque – Macarrones con Sabor a Queso Alikriss 200g"
-                    width="440"
-                    height="570"
+                    width="701"
+                    height="1024"
                     loading="lazy"
+                    decoding="async"
                   >
                 </div>
 
-                <!-- CAMBIAR IMAGEN REVERSO: solo cambiar src y alt -->
-                <div class="flip-face flip-back" data-flip-back>
+                <!-- CAMBIAR IMAGEN REVERSO: solo cambiar src, srcset y alt -->
+                <div class="flip-face flip-back" data-flip-back aria-hidden="true">
                   <img
                     src="assets/img/productos/macarrones-queso-reverso.webp"
-                    alt="Reverso – Información nutricional y modo de preparación Alikriss"
-                    width="440"
-                    height="570"
+                    srcset="assets/img/productos/macarrones-queso-reverso-440.webp 440w, assets/img/productos/macarrones-queso-reverso.webp 667w"
+                    sizes="(max-width: 480px) 90vw, 440px"
+                    alt="Reverso del empaque: información nutricional por 100 g y modo de preparación"
+                    width="667"
+                    height="1024"
                     loading="lazy"
+                    decoding="async"
                   >
                 </div>
 
@@ -390,13 +441,15 @@
 
             <!-- Botón de giro — texto automático desde data-label-* -->
             <button
+              type="button"
               class="flip-btn"
               data-flip-trigger
-              data-label-front="🔄 Ver información nutricional"
-              data-label-back="🔄 Ver frente del empaque"
-              aria-pressed="false"
+              data-label-front="Ver información nutricional"
+              data-label-back="Ver frente del empaque"
+              aria-controls="flip-macarrones"
             >
-              🔄 Ver información nutricional
+              <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-rotate"/></svg>
+              <span data-flip-label>Ver información nutricional</span>
             </button>
           </div>
         </div>
@@ -420,26 +473,26 @@
       <div class="steps">
         <article class="step-card reveal">
           <div class="step-number">1</div>
-          <div class="step-icon" aria-hidden="true">🫙</div>
-          <h4>Hierve el agua</h4>
+          <div class="step-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flame"/></svg></div>
+          <h3>Hierve el agua</h3>
           <p>Coloca agua en una olla hasta que esté en un hervor fuerte.</p>
         </article>
         <article class="step-card reveal reveal-delay-1">
           <div class="step-number">2</div>
-          <div class="step-icon" aria-hidden="true">🍝</div>
-          <h4>Añade los macarrones</h4>
+          <div class="step-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pot"/></svg></div>
+          <h3>Añade los macarrones</h3>
           <p>Agrega los macarrones y cocina removiendo ocasionalmente hasta que estén al dente.</p>
         </article>
         <article class="step-card reveal reveal-delay-2">
           <div class="step-number">3</div>
-          <div class="step-icon" aria-hidden="true">🚰</div>
-          <h4>Cuela y reserva</h4>
+          <div class="step-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-colander"/></svg></div>
+          <h3>Cuela y reserva</h3>
           <p>Cuela los macarrones y retira el exceso de agua.</p>
         </article>
         <article class="step-card reveal reveal-delay-3">
           <div class="step-number">4</div>
-          <div class="step-icon" aria-hidden="true">🧀</div>
-          <h4>Añade el queso</h4>
+          <div class="step-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sparkle"/></svg></div>
+          <h3>Añade el queso</h3>
           <p>Abre el sobre, mezcla con los macarrones y disfruta un sabor irresistible.</p>
         </article>
       </div>
@@ -459,23 +512,23 @@
       <!-- Editar: data/site.json → "values" -->
       <div class="values-grid">
         <article class="value-card reveal">
-          <div class="value-icon" aria-hidden="true">🌱</div>
-          <h4>Naturaleza</h4>
+          <div class="value-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-leaf"/></svg></div>
+          <h3>Naturaleza</h3>
           <p>Nos nutrimos de las bondades de la naturaleza seleccionando ingredientes frescos y auténticos.</p>
         </article>
         <article class="value-card reveal reveal-delay-1">
-          <div class="value-icon" aria-hidden="true">💛</div>
-          <h4>Calidad</h4>
+          <div class="value-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-award"/></svg></div>
+          <h3>Calidad</h3>
           <p>Cada producto pasa por estrictos controles para garantizar lo mejor en tu mesa cada día.</p>
         </article>
         <article class="value-card reveal reveal-delay-2">
-          <div class="value-icon" aria-hidden="true">🚀</div>
-          <h4>Innovación</h4>
+          <div class="value-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bulb"/></svg></div>
+          <h3>Innovación</h3>
           <p>Combinamos tradición y modernidad para crear sabores que sorprenden y conquistan paladares.</p>
         </article>
         <article class="value-card reveal reveal-delay-3">
-          <div class="value-icon" aria-hidden="true">🤝</div>
-          <h4>Compromiso</h4>
+          <div class="value-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-people"/></svg></div>
+          <h3>Compromiso</h3>
           <p>Apoyamos el desarrollo de comunidades locales con responsabilidad social corporativa.</p>
         </article>
       </div>
@@ -483,24 +536,33 @@
   </section>
 
 <!-- =======================================================================
-       TESTIMONIOS (CON SLIDER AUTOMÁTICO Y MANUAL)
-       Datos: data/site.json → "testimonials" (globales de marca)
-  ======================================================================== -->
-<section class="section" style="background:var(--warm); overflow: hidden; position: relative;" aria-labelledby="testi-title">
-  <div class="section-inner" style="position: relative; max-width: 1200px; margin: 0 auto; padding: 0 40px;">
-    
-    <div style="text-align:center; margin-bottom:2rem;">
+     TESTIMONIOS — Slider automático y manual
+     - 3 tarjetas visibles en desktop, 1 en móvil
+     - Avanza de 3 en 3 (o de 1 en 1 en móvil)
+     - Auto-play cada 6 s, se pausa al hover o al tocar botones
+     - Touch/swipe en móvil
+     - Respeta prefers-reduced-motion
+     Datos: data/site.json → "testimonials"
+======================================================================== -->
+<section
+  class="section testi-section"
+  aria-labelledby="testi-title"
+  aria-roledescription="carrusel"
+>
+  <div class="section-inner testi-inner">
+
+    <div class="testi-header" style="text-align:center; margin-bottom:2.5rem;">
       <p class="eyebrow">Lo que dice Venezuela</p>
       <h2 class="section-title" id="testi-title">La familia Alikriss <em>habla</em></h2>
     </div>
 
-    <!-- Contenedor principal del Slider -->
-    <div class="testi-slider-container" style="overflow: hidden; width: 100%;">
-      <div class="testi-grid" id="testiRow" style="display: flex; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); width: 100%;">
-        
-        <!-- Tarjeta 1 (Original) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+    <!-- Contenedor del slider -->
+    <div class="testi-viewport" aria-live="off">
+      <div class="testi-track" id="testiTrack" role="list">
+
+        <!-- ── Tarjeta 1 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"Mis hijos piden los Macarrones Alikriss todos los días. El sabor a queso es increíble y se preparan súper rápido. ¡Son el rescate perfecto para las noches de semana!"</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">ML</div>
@@ -511,10 +573,10 @@
           </div>
         </article>
 
-        <!-- Tarjeta 2 (Original) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-          <p class="testi-text">"Compre por primera vez y quedé enamorada. La pasta queda perfecta al dente y el queso en polvo le da un sabor que no esperaba. ¡Demasiado rico!"</p>
+        <!-- ── Tarjeta 2 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p class="testi-text">"Compré por primera vez y quedé enamorada. La pasta queda perfecta al dente y el queso en polvo le da un sabor que no esperaba. ¡Demasiado rico!"</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">CA</div>
             <div>
@@ -524,9 +586,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 3 (Original) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 3 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"Producto venezolano de altísima calidad. Se nota que lo hacen con amor. El empaque es bonito y la pasta es de lo mejor que he probado. 100% recomendado."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">JP</div>
@@ -537,9 +599,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 4 (Anzoátegui) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 4 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"¡Una total maravilla! Los preparé para el almuerzo del domingo y a toda la familia le fascinó. La textura de la pasta y la cremosidad del queso están a otro nivel. Orgullo nacional."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">AG</div>
@@ -550,9 +612,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 5 (Lara) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 5 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"El verdadero resuelve para cuando uno llega cansado del trabajo. Se cocinan rapidito y el sabor a queso es de verdad, nada artificial. Ya compré tres empaques más para tener en la despensa."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">NM</div>
@@ -563,9 +625,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 6 (Bolívar) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 6 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"A mis chamos les encanta y a mí me salvan la vida. Son súper prácticos, económicos y rinden muchísimo. Una calidad excelente que no le envidia nada a marcas importadas."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">CY</div>
@@ -576,10 +638,10 @@
           </div>
         </article>
 
-        <!-- Tarjeta 7 (Aragua) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
-          <p class="testi-text">"Demasiado buenos. El queso en polvo se disuelve perfecto y no hace grumos, queda una salsa lícita y con un sabor mundial. 100% recomendados para cualquier ocasión."</p>
+        <!-- ── Tarjeta 7 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p class="testi-text">"Demasiado buenos. El queso en polvo se disuelve perfecto y no hace grumos, queda una salsa cremosa y con un sabor mundial. 100% recomendados para cualquier ocasión."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">VP</div>
             <div>
@@ -589,9 +651,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 8 (Zulia) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 8 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"¡Qué molleja de buenos! Nos reunimos a ver el partido de la vinotinto y preparamos varios empaques. Quedaron listos en un dos por tres y volaron de la mesa. ¡Un diez de diez!"</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">JM</div>
@@ -602,9 +664,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 9 (Táchira) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 9 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"Excelente producto. La pasta mantiene su firmeza y el toque de queso tiene el punto exacto de sal. Se nota la calidad en los ingredientes. Seguiré comprando sin duda."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">FC</div>
@@ -615,9 +677,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 10 (Carabobo) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 10 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"Buscaba una opción rápida para mis cenas y encontré mi producto favorito. Quedan listos en minutos y el sabor es adictivo. Excelente relación calidad-precio."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">LG</div>
@@ -628,9 +690,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 11 (Mérida) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 11 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"Ideales para el frío de aquí. Un plato caliente de estos macarrones con bastante queso te cambia el día. Una delicia de producto, felicidades por hacer las cosas bien."</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">MC</div>
@@ -641,9 +703,9 @@
           </div>
         </article>
 
-        <!-- Tarjeta 12 (Monagas) -->
-        <article class="testi-card reveal" style="flex: 0 0 calc(33.333% - 20px); margin: 0 10px; box-sizing: border-box;">
-          <div class="testi-stars" aria-label="5 de 5 estrellas">★★★★★</div>
+        <!-- ── Tarjeta 12 ── -->
+        <article class="testi-card" role="listitem">
+          <div class="testi-stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <p class="testi-text">"Al principio los compré por curiosidad y ahora no pueden faltar en mi carrito de compras. El empaque conserva todo fresquecito y el sabor es insuperable. ¡Buenísimos!"</p>
           <div class="testi-author">
             <div class="testi-avatar" aria-hidden="true">HR</div>
@@ -654,12 +716,24 @@
           </div>
         </article>
 
-      </div>
-    </div>
+      </div><!-- / testi-track -->
+    </div><!-- / testi-viewport -->
 
-    <!-- Botones de Navegación (Flechas) -->
-    <button id="prevBtn" aria-label="Anterior" style="position: absolute; top: 55%; left: 0px; transform: translateY(-50%); background: #ffffff; border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 10; font-weight: bold; font-size: 18px; color: #333;">&#10094;</button>
-    <button id="nextBtn" aria-label="Siguiente" style="position: absolute; top: 55%; right: 0px; transform: translateY(-50%); background: #ffffff; border: 1px solid #ddd; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 10; font-weight: bold; font-size: 18px; color: #333;">&#10095;</button>
+    <!-- Controles de navegación -->
+    <div class="testi-controls" role="group" aria-label="Controles del carrusel">
+      <button type="button" class="testi-btn" id="testiPrev" aria-label="Testimonios anteriores">&#10094;</button>
+
+      <!-- Puntos indicadores — generados por JS -->
+      <div class="testi-dots" id="testiDots" role="group" aria-label="Grupos de testimonios"></div>
+
+      <button type="button" class="testi-btn" id="testiNext" aria-label="Siguientes testimonios">&#10095;</button>
+
+      <!-- Pausa del auto-play (WCAG 2.2.2) — estado gestionado por JS -->
+      <button type="button" class="testi-btn testi-pause" id="testiPause" aria-label="Pausar testimonios">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" class="icon-pause"><path fill="currentColor" d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" class="icon-play" hidden><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
 
   </div>
 </section>
@@ -677,21 +751,23 @@
           <!-- Logo empresa matriz — data/site.json → "logos.company" -->
           <img
             class="about-logo"
-            src="assets/img/logo-alimentos-kriss.png"
-            alt="Logo Alimentos Kriss"
+            src="assets/img/logo-alimentos-kriss.webp"
+            alt="Alimentos Kriss"
             width="200"
+            height="200"
             loading="lazy"
+            decoding="async"
           >
           <p class="eyebrow" style="color:rgba(230,187,79,0.7)">La empresa</p>
           <h2 class="section-title" id="about-title">Alimentos Kriss:<br><em style="color:var(--gold)">calidad venezolana</em></h2>
           <p class="section-lead">En Alimentos Kriss, nuestra inspiración nace de la unión armoniosa entre la naturaleza y la innovación. Cada producto refleja nuestra filosofía: calidad de ingredientes fusionada con espíritu moderno.</p>
           <!-- Editar: data/site.json → "brand" -->
           <div class="about-details">
-            <div class="about-detail"><span class="about-detail-icon">📍</span><span>Av. Agustín Codazzi, Calle La Palmita, QTA 29 Anexo A, Caracas – Distrito Capital</span></div>
-            <div class="about-detail"><span class="about-detail-icon">🏛️</span><span>R.I.F.: J-50038998-1 </span></div>
-            <div class="about-detail"><span class="about-detail-icon">✅</span><span>Registrado en el SACS ente adscrito al M.P.P.S. bajo el Nº A-174.589</span></div>
-            <div class="about-detail"><span class="about-detail-icon">✅</span><span>CPE 0326609002</span></div>
-            <div class="about-detail"><span class="about-detail-icon">🌐</span><a href="https://www.alimentoskriss.com" style="color:rgba(255,255,255,0.7);text-decoration:underline;">www.alimentoskriss.com</a></div>
+            <div class="about-detail"><span class="about-detail-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg></span><span>Av. Agustín Codazzi, Calle La Palmita, QTA 29 Anexo A, Caracas – Distrito Capital</span></div>
+            <div class="about-detail"><span class="about-detail-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-landmark"/></svg></span><span>R.I.F.: J-50038998-1 </span></div>
+            <div class="about-detail"><span class="about-detail-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span><span>Registrado en el SACS ente adscrito al M.P.P.S. bajo el Nº A-174.589</span></div>
+            <div class="about-detail"><span class="about-detail-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></span><span>CPE 0326609002</span></div>
+            <div class="about-detail"><span class="about-detail-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg></span><a href="https://alimentoskriss.com/" style="color:rgba(255,255,255,0.7);text-decoration:underline;">www.alimentoskriss.com</a></div>
           </div>
         </div>
 
@@ -699,15 +775,15 @@
         <div class="reveal reveal-delay-1">
           <div class="about-mission">
             <div class="mission-block">
-              <div class="mission-title">🎯 Misión</div>
+              <div class="mission-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-target"/></svg> Misión</div>
               <p class="mission-text">Ofrecer productos de calidad e innovación que fidelicen a nuestros clientes, satisfagan sus necesidades nutricionales y apoyen el desarrollo de comunidades locales y globales.</p>
             </div>
             <div class="mission-block">
-              <div class="mission-title">🌟 Visión</div>
+              <div class="mission-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg> Visión</div>
               <p class="mission-text">Ser reconocidos como empresa ejemplar en la gestión de la cadena agroalimentaria, cumpliendo los más altos estándares de servicio para brindar bienestar a las personas y al planeta.</p>
             </div>
             <div class="mission-block">
-              <div class="mission-title">💡 Esencia</div>
+              <div class="mission-title"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sparkle"/></svg> Esencia</div>
               <p class="mission-text">Una empresa que se nutre de la naturaleza, se compromete con la calidad y se inspira en la modernidad. Cada elemento fue seleccionado para reflejar nuestros valores fundamentales.</p>
             </div>
           </div>
@@ -726,9 +802,9 @@
       <p class="cta-text">Lleva a tu mesa el sabor que toda Venezuela está amando. Escríbenos y encuentra nuestros productos en tu ciudad.</p>
       <!-- Editar: data/site.json → "brand.email" -->
       <a href="mailto:info@alimentoskriss.com" class="btn btn-dark">
-        📩 Escríbenos hoy
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg> Escríbenos hoy
       </a>
-      <p style="margin-top:1.5rem; font-size:0.88rem; color:rgba(26,10,4,0.55); font-weight:600;">
+      <p style="margin-top:1.5rem; font-size:0.88rem; color:rgba(26,10,4,0.78); font-weight:600;">
         info@alimentoskriss.com &nbsp;·&nbsp; www.alimentoskriss.com
       </p>
     </div>
@@ -748,7 +824,7 @@
     </div>
     <!-- Editar: data/site.json → "footerLinks" -->
     <nav class="footer-links" aria-label="Links de pie de página">
-      <h5>Navegar</h5>
+      <h2>Navegar</h2>
       <ul>
         <li><a href="#nosotros">La experiencia</a></li>
         <li><a href="#producto">El producto</a></li>
@@ -760,19 +836,19 @@
     </nav>
     <!-- Editar: data/site.json → "brand" -->
     <div class="footer-contact">
-      <h5>Contacto</h5>
+      <h2>Contacto</h2>
       <p>
         <a href="mailto:info@alimentoskriss.com">info@alimentoskriss.com</a><br>
         Caracas, Distrito Capital<br>
         República Bolivariana de Venezuela<br>
-        <a href="https://www.alimentoskriss.com">www.alimentoskriss.com</a>
+        <a href="https://alimentoskriss.com/">www.alimentoskriss.com</a>
       </p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Alimentos Kriss VII, C.A. Todos los derechos reservados. Hecho con ❤️ en Venezuela. <a href="https://steamcommunity.com/id/eazx/" target="_blank" rel="noopener noreferrer nofollow"> By eazX</a> </p>
-    
-    <p class="footer-rif">R.I.F. J-50038998-1</p>
+    <p class="footer-copy">© 2026 Alimentos Kriss VII, C.A. Todos los derechos reservados. Hecho con amor en Venezuela. 
+  <a href="https://steamcommunity.com/id/eazx/" target="_blank" rel="noopener noreferrer nofollow" style="color: #f8c352; font-weight: bold;"> By eazX</a> 
+</p><p class="footer-rif">R.I.F. J-50038998-1</p>
   </div>
 </footer>
 
@@ -781,76 +857,9 @@
      main.js     → nav, reveal, smooth scroll
      flip-card.js → tarjeta giratoria genérica
 ======================================================================== -->
-<script src="js/main.js"></script>
-<script src="js/flip-card.js"></script>
-<!-- Script de Automatización y Control Manual -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const row = document.getElementById("testiRow");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const cards = row.children;
-    const totalCards = cards.length;
-    
-    let cardsPerSlide = window.innerWidth < 768 ? 1 : 3; 
-    let currentIndex = 0;
-    const scrollInterval = 6000; // Rotación lenta cada 6 segundos
-    let autoSliderTimer;
-
-    // Escucha cambios de pantalla
-    window.addEventListener("resize", () => {
-      cardsPerSlide = window.innerWidth < 768 ? 1 : 3;
-      actualizarSlider();
-    });
-
-    function actualizarSlider() {
-      // Evita sobrepasar los límites lógicos al redimensionar
-      if (currentIndex > totalCards - cardsPerSlide) {
-        currentIndex = totalCards - cardsPerSlide;
-      }
-      let percentage = (currentIndex * 100) / cardsPerSlide;
-      row.style.transform = `translateX(-${percentage}%)`;
-    }
-
-    function siguienteSlide() {
-      if (currentIndex >= totalCards - cardsPerSlide) {
-        currentIndex = 0; // Bucle: vuelve al inicio
-      } else {
-        currentIndex += cardsPerSlide;
-      }
-      actualizarSlider();
-    }
-
-    function anteriorSlide() {
-      if (currentIndex <= 0) {
-        currentIndex = Math.max(0, totalCards - cardsPerSlide); // Va al final
-      } else {
-        currentIndex -= cardsPerSlide;
-      }
-      actualizarSlider();
-    }
-
-    // Reiniciar el temporizador automático al hacer clic manual
-    function resetAutoPlay() {
-      clearInterval(autoSliderTimer);
-      autoSliderTimer = setInterval(siguienteSlide, scrollInterval);
-    }
-
-    // Eventos de los botones
-    nextBtn.addEventListener("click", () => {
-      siguienteSlide();
-      resetAutoPlay();
-    });
-
-    prevBtn.addEventListener("click", () => {
-      anteriorSlide();
-      resetAutoPlay();
-    });
-
-    // Iniciar temporizador por primera vez
-    autoSliderTimer = setInterval(siguienteSlide, scrollInterval);
-  });
-</script>
+<script src="js/main.js?v=2026-10" defer></script>
+<script src="js/flip-card.js?v=2026-10" defer></script>
+<script src="js/testimonials-slider.js?v=2026-10" defer></script>
 
 </body>
 </html>

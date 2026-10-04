@@ -19,11 +19,17 @@
   --off:         #F5EDD8;
   --text:        #2C1A0E;
   --muted:       #7A6348;
-  --light-muted: #BBA88A;
+  --light-muted: #BBA88A;   /* solo decorativo: no usar para texto (2,2:1) */
+
+  /* ── Dorado para TEXTO sobre fondos claros (WCAG AA) ─────────────────────
+     --gold / --gold-dark se ven bien en fondos oscuros, pero sobre crema
+     no alcanzan el contraste mínimo. Usar estos en texto sobre claro.   */
+  --gold-text:    #8A5F12;   /* ≥ 4,8:1 en cream/warm/off → texto pequeño */
+  --gold-text-lg: #A87A1E;   /* ≥ 3,3:1 en cream/warm/off → títulos grandes */
 
   /* ── Tipografía ────────────────────────────────────────────────────────── */
   --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body:    'Nunito', system-ui, sans-serif;
+  --font-body:    'Karla', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
   /* ── Espaciado base ────────────────────────────────────────────────────── */
   --section-pad: 6rem 5vw;
@@ -31,8 +37,9 @@
   --gap-grid:    1.5rem;
 
   /* ── Bordes y radios ───────────────────────────────────────────────────── */
-  --radius-card: 1.25rem;
-  --radius-pill: 3rem;
+  --radius-card: 0.375rem;   /* tarjetas: esquinas sobrias */
+  --radius-btn:  3px;        /* botones y etiquetas: casi rectos (look premium) */
+  --radius-pill: 3rem;       /* solo para elementos circulares/pastilla */
 
   /* ── Sombras ───────────────────────────────────────────────────────────── */
   --shadow-card:    0 4px 24px rgba(0,0,0,0.07);

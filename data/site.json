@@ -4,7 +4,7 @@
     "company": "Alimentos Kriss VII, C.A.",
     "rif": "J-50038998-1",
     "tagline": "Hecho con amor en Venezuela",
-    "url": "https://www.alimentoskriss.com",
+    "url": "https://alimentoskriss.com",
     "email": "info@alimentoskriss.com",
     "address": "Av. Agustín Codazzi, Calle La Palmita, Caracas – Distrito Capital",
     "legalNote": "QTA. EDOCLAR 29 Anexo A",
@@ -29,8 +29,8 @@
 
   "fonts": {
     "heading": "Playfair Display",
-    "body":    "Nunito",
-    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap"
+    "body":    "Karla",
+    "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap"
   },
 
   "mission": "Ofrecer productos de calidad e innovación que fidelicen a nuestros clientes, satisfagan sus necesidades nutricionales y apoyen el desarrollo de comunidades locales y globales.",

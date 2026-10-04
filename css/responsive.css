@@ -12,9 +12,54 @@
 
 /* ── Móvil (≤ 768px) ────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  /* Nav: ocultar links de texto, mantener logo + CTA si hubiera */
+  /* Nav: botón de menú + hoja a pantalla completa (js/main.js) */
   .nav              { padding: 0.7rem 1.2rem; }
-  .nav-links        { display: none; }      /* TODO: añadir menú hamburguesa */
+  .nav-toggle       { display: inline-flex; }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: var(--nav-h, 4.5rem);
+    left: 0; right: 0; bottom: 0;
+    background: #160C06;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 1rem 1.5rem calc(2rem + env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+  }
+
+  /* backdrop-filter crearía un bloque contenedor y encogería la hoja */
+  .nav--open        { backdrop-filter: none; -webkit-backdrop-filter: none; background: #160C06; }
+  .nav--open .nav-links { display: flex; }
+
+  .nav-links a {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #F6EEDF;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(230,187,79,0.12);
+  }
+
+  .nav-links li:last-child { margin-top: auto; padding-top: 2rem; }
+
+  .nav-links a.nav-cta {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    background: var(--gold);
+    color: var(--black);
+    padding: 1rem;
+  }
+
+  body.menu-open    { overflow: hidden; }
 
   /* Hero: apilado vertical */
   .hero-inner {
@@ -25,12 +70,11 @@
 
   .hero-body        { margin-left: auto; margin-right: auto; }
   .hero-actions     { justify-content: center; }
+  .hero-facts       { justify-content: center; text-align: center; }
+  .hero-facts div   { align-items: center; }
 
   /* Producto: apilado vertical */
   .product-inner    { grid-template-columns: 1fr; gap: 3rem; }
-
-  /* Testimonios: una columna */
-  .testi-grid       { grid-template-columns: 1fr; }
 
   /* Nosotros: apilado vertical */
   .about-inner      { grid-template-columns: 1fr; }
@@ -55,6 +99,10 @@
   .hero             { padding: 6rem 1.2rem 4rem; }
 
   .hero-heading     { font-size: 2.2rem; }
+
+  /* Carrusel: en móvil hay 12 puntos; van en su propia fila */
+  .testi-controls   { flex-wrap: wrap; row-gap: 1rem; }
+  .testi-dots       { order: -1; width: 100%; justify-content: center; }
   .product-heading  { font-size: 1.9rem; }
   .cta-title        { font-size: 1.8rem; }
 }

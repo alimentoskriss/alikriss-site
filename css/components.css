@@ -43,30 +43,49 @@
 
 .nav-links a {
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.8);
   text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: color var(--transition-base);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color var(--transition-base), background var(--transition-base);
 }
 
 .nav-links a:hover { color: var(--gold); }
 
-/* Botón CTA en nav */
+/* Botón CTA en nav: contorno dorado, se rellena al pasar el ratón */
 .nav-links a.nav-cta {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
-  color: var(--black);
-  padding: 0.45rem 1.3rem;
-  border-radius: var(--radius-pill);
-  font-weight: 800;
-  box-shadow: 0 3px 12px rgba(230,187,79,0.35);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-btn);
+  font-weight: 700;
 }
 
 .nav-links a.nav-cta:hover {
+  background: var(--gold);
   color: var(--black);
-  transform: translateY(-1px);
 }
+
+/* Botón de menú: oculto en escritorio (ver responsive.css) */
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid rgba(230,187,79,0.35);
+  border-radius: var(--radius-btn);
+  color: var(--gold);
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.nav-toggle .icon-close,
+.nav--open .nav-toggle .icon-open { display: none; }
+.nav--open .nav-toggle .icon-close { display: block; }
 
 
 /* ── Componente: Hero ───────────────────────────────────────────────────────
@@ -120,37 +139,40 @@
 }
 
 /* Pill badge sobre el heading */
+/* Antetítulo con filete dorado */
 .hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: rgba(230,187,79,0.12);
-  border: 1px solid rgba(230,187,79,0.35);
-  color: var(--gold-light);
-  font-size: 0.82rem;
+  gap: 0.85rem;
+  color: var(--gold);
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 0.38rem 1.1rem;
-  border-radius: var(--radius-pill);
   margin-bottom: 1.6rem;
   animation: fadeUp 0.7s ease both;
 }
 
-.hero-pill span { color: var(--gold); }
+.hero-pill::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--gold);
+}
 
 .hero-heading {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 4.5vw, 4.2rem);
-  font-weight: 800;
+  font-size: clamp(2.6rem, 4.6vw, 4.4rem);
+  font-weight: 600;
   color: #fff;
-  line-height: 1.1;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
   margin-bottom: 1.4rem;
   animation: fadeUp 0.75s ease 0.08s both;
 }
 
 .hero-heading em {
-  font-style: normal;
+  font-style: italic;
   color: var(--gold);
 }
 
@@ -166,9 +188,40 @@
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: center;
   animation: fadeUp 0.85s ease 0.24s both;
+}
+
+/* Datos del empaque bajo los botones */
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2.5rem;
+  margin-top: 2.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(230,187,79,0.18);
+  animation: fadeUp 0.9s ease 0.3s both;
+}
+
+.hero-facts div { display: flex; flex-direction: column-reverse; gap: 0.35rem; }
+
+.hero-facts dd {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-facts dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
 }
 
 /* Contenedor visual del producto en el hero */
@@ -209,48 +262,7 @@
   background: transparent;
 }
 
-.product-hero-img:hover { transform: scale(1.03) rotate(-1deg); }
-
-
-/* ── Componente: Floating badges ────────────────────────────────────────────
-   Badges animados flotantes sobre la imagen del hero.
-   Datos: data/products.json → "badges"
-   JS: (ninguno)
-============================================================================= */
-.float-badge {
-  position: absolute;
-  z-index: 3;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: var(--font-body);
-  font-weight: 900;
-  animation: bob 5s ease-in-out infinite;
-}
-
-.float-badge--red {
-  width: 100px; height: 100px;
-  background: var(--red);
-  color: white;
-  font-size: 0.68rem;
-  line-height: 1.4;
-  box-shadow: 0 8px 28px rgba(184,0,30,0.5);
-  bottom: 60px; left: -20px;
-}
-
-.float-badge--gold {
-  width: 84px; height: 84px;
-  background: var(--gold);
-  color: var(--black);
-  font-size: 0.65rem;
-  line-height: 1.4;
-  box-shadow: 0 8px 28px rgba(230,187,79,0.5);
-  top: 30px; right: -16px;
-  animation-delay: -2.5s;
-}
+.product-hero-img:hover { transform: scale(1.02); }
 
 
 /* ── Componente: Stats bar ──────────────────────────────────────────────────
@@ -307,32 +319,23 @@
   margin-top: 3.5rem;
 }
 
+/* Tarjeta sobria: sin sombra, filete dorado superior */
 .exp-card {
   background: #fff;
   border-radius: var(--radius-card);
-  padding: 2.5rem 2rem;
-  border: 1px solid rgba(0,0,0,0.06);
-  position: relative;
-  overflow: hidden;
-  transition: transform var(--transition-card), box-shadow var(--transition-card);
+  padding: 2.25rem 2rem;
+  border: 1px solid rgba(138,95,18,0.14);
+  border-top: 2px solid var(--gold);
+  transition: border-color var(--transition-card), box-shadow var(--transition-card);
 }
 
 .exp-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
+  border-color: rgba(138,95,18,0.3);
+  border-top-color: var(--gold);
+  box-shadow: var(--shadow-card);
 }
 
-/* Barra dorada superior */
-.exp-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 4px;
-  background: linear-gradient(90deg, var(--gold-light), var(--gold-dark));
-  border-radius: var(--radius-card) var(--radius-card) 0 0;
-}
-
-.exp-icon { font-size: 2.4rem; margin-bottom: 1.2rem; }
+.exp-icon { font-size: 2rem; color: var(--gold-text); margin-bottom: 1.25rem; display: flex; }
 
 .exp-card h3 {
   font-family: var(--font-heading);
@@ -376,29 +379,32 @@
 .product-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: rgba(230,187,79,0.12);
-  border: 1px solid rgba(230,187,79,0.4);
+  gap: 0.85rem;
   color: var(--gold);
   font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  padding: 0.35rem 1rem;
-  border-radius: var(--radius-pill);
   margin-bottom: 1.4rem;
+}
+
+.product-label::before {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--gold);
 }
 
 .product-heading {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 800;
+  font-weight: 600;
   color: #fff;
   line-height: 1.15;
   margin-bottom: 1.4rem;
 }
 
-.product-heading em { font-style: normal; color: var(--gold); }
+.product-heading em { font-style: italic; color: var(--gold); }
 
 .product-desc {
   font-size: 1rem;
@@ -420,17 +426,13 @@
 }
 
 .feature-check {
-  width: 22px; height: 22px;
-  background: rgba(230,187,79,0.18);
-  border: 1px solid rgba(230,187,79,0.5);
-  border-radius: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--gold);
-  font-size: 0.7rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
 }
+
+.feature-check .icon { stroke-width: 2; }
 
 /* Chips de nutrición */
 .nutrition-chips {
@@ -441,9 +443,9 @@
 }
 
 .nut-chip {
-  background: rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.04);
   border: 1px solid rgba(230,187,79,0.2);
-  border-radius: 0.75rem;
+  border-radius: var(--radius-btn);
   padding: 0.75rem 1.1rem;
   text-align: center;
 }
@@ -547,10 +549,13 @@
   font-weight: 700;
   font-size: 0.78rem;
   letter-spacing: 0.1em;
-  padding: 0.4rem 1.2rem;
-  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-btn);
   cursor: pointer;
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: background var(--transition-base);
   z-index: 5;
 }
@@ -573,16 +578,17 @@
   border-radius: var(--radius-card);
   padding: 2rem 1.5rem;
   text-align: center;
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: transform var(--transition-card);
+  border: 1px solid rgba(138,95,18,0.14);
+  transition: border-color var(--transition-card);
 }
 
-.step-card:hover { transform: translateY(-4px); }
+.step-card:hover { border-color: rgba(138,95,18,0.35); }
 
 .step-number {
   width: 44px; height: 44px;
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
-  color: var(--black);
+  background: transparent;
+  border: 1px solid var(--gold-text);
+  color: var(--gold-text);
   border-radius: 50%;
   font-family: var(--font-heading);
   font-size: 1.3rem;
@@ -593,9 +599,9 @@
   margin: 0 auto 1.2rem;
 }
 
-.step-icon { font-size: 2rem; margin-bottom: 1rem; }
+.step-icon { font-size: 1.9rem; color: var(--gold-text); margin-bottom: 1rem; display: flex; justify-content: center; }
 
-.step-card h4 {
+.step-card h3 {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
@@ -621,19 +627,18 @@
   background: #fff;
   border-radius: var(--radius-card);
   padding: 2.5rem 1.5rem;
-  border: 1px solid rgba(0,0,0,0.06);
-  transition: all var(--transition-card);
+  border: 1px solid rgba(138,95,18,0.14);
+  transition: border-color var(--transition-card), box-shadow var(--transition-card);
 }
 
 .value-card:hover {
   border-color: var(--gold);
-  box-shadow: 0 10px 40px rgba(230,187,79,0.15);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
 }
 
-.value-icon { font-size: 2.4rem; margin-bottom: 1rem; }
+.value-icon { font-size: 2rem; color: var(--gold-text); margin-bottom: 1rem; display: flex; justify-content: center; }
 
-.value-card h4 {
+.value-card h3 {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.05rem;
@@ -644,28 +649,54 @@
 .value-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
 
 
-/* ── Componente: Testimonial cards ──────────────────────────────────────────
+/* ── Componente: Testimonios (slider) ──────────────────────────────────────
+   HTML: sección .testi-section · JS: js/testimonials-slider.js
    Datos: data/site.json → "testimonials"
 ============================================================================= */
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap-grid);
-  margin-top: 3.5rem;
+/* ── Sección fondo ── */
+.testi-section { background: var(--warm); }
+
+/* ── Viewport: ventana visible, oculta lo que está fuera ── */
+.testi-viewport {
+  overflow: hidden;
+  width: 100%;
 }
 
+/* ── Track: fila de todas las tarjetas ──────────────────────────────────────
+   Las tarjetas NO tienen width aquí.
+   El ancho se asigna con JS en píxeles exactos para evitar
+   el problema de porcentajes relativos que causaba el corte.
+── */
+.testi-track {
+  display: flex;
+  gap: 1.5rem;             /* GAP fijo entre tarjetas */
+  transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Sin animación si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .testi-track { transition: none; }
+}
+
+/* ── Tarjeta individual ── */
 .testi-card {
+  /* width se asigna por JS */
+  flex-shrink: 0;
   background: #fff;
   border-radius: var(--radius-card);
   padding: 2rem 1.75rem;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(138,95,18,0.14);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   transition: transform var(--transition-card);
 }
 
 .testi-card:hover { transform: translateY(-4px); }
 
 .testi-stars {
-  color: var(--gold);
+  color: var(--gold, #E6BB4F);
   font-size: 1rem;
   letter-spacing: 0.12em;
   margin-bottom: 1rem;
@@ -673,31 +704,91 @@
 
 .testi-text {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--muted, #7A6348);
   line-height: 1.78;
   margin-bottom: 1.5rem;
   font-style: italic;
+  flex-grow: 1;  /* empuja el autor al fondo */
 }
 
 .testi-author { display: flex; align-items: center; gap: 0.75rem; }
 
 .testi-avatar {
   width: 44px; height: 44px;
-  background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+  background: linear-gradient(135deg, var(--gold-light, #F5D780), var(--gold-dark, #C99A2E));
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading, 'Playfair Display', serif);
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--black);
+  color: var(--black, #1A0A04);
   flex-shrink: 0;
 }
 
-.testi-name { font-weight: 700; font-size: 0.92rem; color: var(--text); }
-.testi-loc  { font-size: 0.8rem; color: var(--light-muted); }
+.testi-name { font-weight: 700; font-size: 0.92rem; color: var(--text, #2C1A0E); }
+.testi-loc  { font-size: 0.8rem; color: var(--muted); }
 
+/* ── Controles ── */
+.testi-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 2.25rem;
+}
+
+.testi-btn {
+  width: 42px; height: 42px;
+  background: #fff;
+  border: 1.5px solid rgba(230,187,79,0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  color: var(--gold-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+
+.testi-btn:hover {
+  background: var(--gold, #E6BB4F);
+  border-color: var(--gold, #E6BB4F);
+  color: var(--black, #1A0A04);
+  transform: scale(1.08);
+}
+
+/* ── Puntos indicadores ── */
+.testi-dots { display: flex; gap: 0.1rem; align-items: center; }
+
+/* Área táctil de 24px (WCAG 2.5.8); el punto visible sigue siendo de 8px */
+.testi-dot {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.testi-dot::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.25s, transform 0.25s;
+}
+
+.testi-dot.active::before {
+  background: var(--gold-text);
+  transform: scale(1.35);
+}
+
+/* Botón pausa: mismo estilo que flechas, un poco más discreto */
+.testi-pause { width: 36px; height: 36px; margin-left: 0.25rem; }
+.testi-pause svg { display: block; }
+.testi-pause svg[hidden] { display: none; }
 
 /* ── Componente: About / Empresa section ────────────────────────────────────
    Datos: data/site.json → "mission", "vision", "essence"
@@ -732,7 +823,7 @@
   line-height: 1.7;
 }
 
-.about-detail-icon { color: var(--gold); font-size: 1.1rem; margin-top: 0.1rem; flex-shrink: 0; }
+.about-detail-icon { color: var(--gold); font-size: 1.15rem; margin-top: 0.2rem; flex-shrink: 0; display: flex; }
 
 .about-mission {
   background: rgba(230,187,79,0.08);
@@ -747,9 +838,12 @@
 .mission-title {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--gold);
   margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .mission-text { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.75; }
@@ -758,37 +852,20 @@
 /* ── Componente: CTA banner ─────────────────────────────────────────────────
 ============================================================================= */
 .cta-section {
-  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+  background: var(--gold);
   padding: var(--section-pad);
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.cta-section::before {
-  content: '';
-  position: absolute;
-  width: 700px; height: 700px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  top: -350px; left: -200px;
-}
-
-.cta-section::after {
-  content: '';
-  position: absolute;
-  width: 500px; height: 500px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 50%;
-  bottom: -250px; right: -100px;
-}
 
 .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
 
 .cta-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--black);
   line-height: 1.2;
   margin-bottom: 1.2rem;
@@ -823,14 +900,14 @@
 }
 
 .footer-brand img   { height: 52px; margin-bottom: 1.2rem; }
-.footer-brand p     { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 260px; }
+.footer-brand p     { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 260px; }
 
-.footer-links h5    { font-weight: 800; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+.footer-links h2    { font-weight: 700; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
 .footer-links ul    { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; }
 .footer-links a     { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; transition: color var(--transition-base); }
 .footer-links a:hover { color: var(--gold); }
 
-.footer-contact h5  { font-weight: 800; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+.footer-contact h2  { font-weight: 700; font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
 .footer-contact p   { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
 .footer-contact a   { color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition-base); }
 .footer-contact a:hover { color: var(--gold); }
@@ -845,5 +922,16 @@
   gap: 1rem;
 }
 
-.footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
-.footer-rif  { font-size: 0.8rem; color: rgba(230,187,79,0.6); font-weight: 700; }
+.footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.55); }
+.footer-rif  { font-size: 0.8rem; color: rgba(230,187,79,0.8); font-weight: 700; }
+
+
+/* ── Movimiento reducido: tarjeta giratoria sin 3D ──────────────────────────
+   Va al final para ganar a .flip-back { transform: rotateY(180deg) }.
+   flip-card.js alterna display entre frente y reverso. */
+@media (prefers-reduced-motion: reduce) {
+  .flip-back { transform: none; display: none; }
+  .product-3d-wrap::before,
+  .product-display::before,
+  .hero-glow { animation: none; }
+}
