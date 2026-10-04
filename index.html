@@ -43,8 +43,9 @@
 
   <!-- =======================================================================
        STRUCTURED DATA — Schema.org
-       Para agregar un producto: añadir un bloque Product independiente o
-       crear una página /productos/slug.html con su propio JSON-LD.
+       Sin bloque Product a propósito: Google exige precio ("offers") o reseñas
+       para validarlo, y Alikriss no publica precios (se consultan por WhatsApp).
+       Si algún día se publican precios, añadir un Product con su Offer.
   ======================================================================== -->
   <script type="application/ld+json">
   {
@@ -80,30 +81,6 @@
           "url": "https://wa.me/584122754237",
           "areaServed": "VE",
           "availableLanguage": "es"
-        }
-      },
-      {
-        "@type": "Product",
-        "@id": "https://alimentoskriss.com/#macarrones-queso",
-        "name": "Macarrones con Sabor a Queso Alikriss",
-        "description": "Pasta de sémola de trigo durum con sabor a queso cheddar. Contenido neto 200 g. Registrado SACS A-174.589.",
-        "brand": { "@type": "Brand", "name": "Alikriss" },
-        "manufacturer": { "@id": "https://alimentoskriss.com/#organization" },
-        "countryOfOrigin": { "@type": "Country", "name": "Venezuela" },
-        "category": "Pasta",
-        "image": [
-          "https://alimentoskriss.com/assets/img/productos/macarrones-queso-frente.webp",
-          "https://alimentoskriss.com/assets/img/productos/macarrones-queso-reverso.webp",
-          "https://alimentoskriss.com/assets/img/productos/macarrones-queso-og.jpg"
-        ],
-        "weight": { "@type": "QuantitativeValue", "value": 200, "unitCode": "GRM" },
-        "nutrition": {
-          "@type": "NutritionInformation",
-          "servingSize": "100 g",
-          "calories": "350 calories",
-          "proteinContent": "15 g",
-          "fatContent": "0 g",
-          "carbohydrateContent": "71 g"
         }
       },
       {
@@ -223,7 +200,7 @@
       <li><a href="#producto">Producto</a></li>
       <li><a href="#preparacion">Preparación</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." class="nav-cta" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Pedir ahora <span class="sr-only">(abre WhatsApp)</span></a></li>
+      <li><a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20consultar%20precios%20y%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." class="nav-cta" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Pedir ahora <span class="sr-only">(abre WhatsApp)</span></a></li>
     </ul>
   </nav>
 </header>
@@ -383,7 +360,7 @@
             <div class="feature"><span class="feature-check"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>Sin grasa añadida (0g por 100g)</div>
             <div class="feature"><span class="feature-check"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span>Producido en Venezuela</div>
           </div>
-          <a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." class="btn btn-gold" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Pedir por WhatsApp <span class="sr-only">(abre WhatsApp)</span></a>
+          <a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20consultar%20precios%20y%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." class="btn btn-gold" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Pedir por WhatsApp <span class="sr-only">(abre WhatsApp)</span></a>
 
           <!-- Editar: data/products.json → "nutritionChips" -->
           <div class="nutrition-chips">
@@ -805,10 +782,10 @@
   <section id="contacto" class="cta-section" aria-labelledby="cta-title">
     <div class="cta-inner">
       <h2 class="cta-title" id="cta-title">¿Listo para vivir la experiencia Alikriss?</h2>
-      <p class="cta-text">Haz tu pedido por WhatsApp o pregúntanos dónde encontrar Alikriss en tu ciudad.</p>
+      <p class="cta-text">Consulta precios y haz tu pedido por WhatsApp, o pregúntanos dónde encontrar Alikriss en tu ciudad. También vendemos al mayor.</p>
       <!-- WhatsApp y correo: data/site.json → "brand.whatsapp" / "brand.email" -->
       <div class="cta-actions">
-        <a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." class="btn btn-dark" target="_blank" rel="noopener">
+        <a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20consultar%20precios%20y%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." class="btn btn-dark" target="_blank" rel="noopener">
           <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-whatsapp"/></svg> Pedir por WhatsApp <span class="sr-only">(abre WhatsApp)</span>
         </a>
         <a href="mailto:info@alimentoskriss.com" class="btn btn-link-dark">
@@ -850,7 +827,7 @@
       <h2>Contacto</h2>
       <p>
         <a href="mailto:info@alimentoskriss.com">info@alimentoskriss.com</a><br>
-        <a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." target="_blank" rel="noopener">WhatsApp: +58 412-275-4237 <span class="sr-only">(abre WhatsApp)</span></a><br>
+        <a href="https://wa.me/584122754237?text=Hola%20Alikriss%2C%20quiero%20consultar%20precios%20y%20hacer%20un%20pedido%20de%20Macarrones%20con%20Sabor%20a%20Queso." target="_blank" rel="noopener">WhatsApp: +58 412-275-4237 <span class="sr-only">(abre WhatsApp)</span></a><br>
         Caracas, Distrito Capital<br>
         República Bolivariana de Venezuela<br>
         <a href="https://alimentoskriss.com/">www.alimentoskriss.com</a>
